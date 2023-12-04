@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 2</title>
+</head>
+<body>
+    <h1>Practise question 2</h1>
+    <h2>Q1.Logical Operator</h2>
+    <h2>Q2.Comparison Operator</h2>
+    <script>
+    if (number > 10 && number < 20) {
+    console.log("The number is greater than 10 and less than 20.");
+    } else {
+    console.log("The number does not satisfy both conditions.");
+    }
+
+    // Taking user input using prompt
+    let userInput = prompt("Enter a number:");
+
+    // Converting user input to a number using parseInt
+    let number = parseInt(userInput);
+
+    // Checking if the number is both greater than 10 and less than 20
+    if (number > 10 && number < 20) {
+    console.log("The number is greater than 10 and less than 20.");
+    } else {
+    console.log("The number does not satisfy both conditions or it is not a valid number.");
+    }
+
+    // // Assuming age is taken as user input
+    let age = 25; 
+
+    if ((age <= 19) || age >= 65) {
+    console.log("The person is a teenager or a senior citizen.");
+    } else {
+    console.log("The person is neither a teenager nor a senior citizen.");
+    }
+
+        let givenString = "Hello";
+       if (!givenString) {
+       console.log("The string is empty.");
+       } else {
+       console.log("The string is not empty.");
+      }
+
+    let X = 45; 
+    if (X <= 50) {
+      console.log("The value of X is less than or equal to 50.");
+    } else {
+      console.log("The value of X is greater than 50.");
+    }
+
+    let personAge = 25; 
+
+    if (personAge >= 21) {
+    console.log("The person's age is 21 or older.");
+    } else {
+    console.log("The person's age is younger than 21.");
+    }
+
+    let A = 10;
+    let B = 10;
+    if (A == B) {
+    console.log("The variables A and B are equal.");
+    } else {
+    console.log("The variables A and B are not equal.");
+    }
+
+    document.write("What is symbol === indicate?");
+    document.write("The === symbol in JavaScript is called the strict-equality-operator. ");
+    document.write("It is used for comparison and checks whether two values are equal in both value and data type");
+
+    document.write("e.What is the difference between '==' and  '===' Equality operator?<br><br>");
+    document.write("<br>'==' (Equality Operator):<br>The '==' operator is known as the equality operator.");
+    document.write("<br>-It performs a comparison between two values after attempting to coerce them to a common type.");
+    document.write("<br>-If the compared values are of different types, JavaScript will attempt to convert them to the same type before making the comparison.");
+    document.write("<br>-After type coercion, it checks if the values are equal.<br><br>");
+
+    //example
+    console.log(5 == '5');       
+
+    document.write("'===' (Strict Equality Operator):<br>");
+    document.write("-The '===' operator is known as the strict equality operator.<br>");
+    document.write("-It checks for equality between two values without performing type coercion.<br>");
+    document.write("-It compares both the values and their types. They must be of the same type to be considered equal.<br>");
+    document.write("-If the values being compared are of different types, '===' will return false without attempting to convert them.");
+    
+    //example
+    console.log(5 === '5');  
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Employee Mangemen </title>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-mynav">
+    <div class="container-fluid">
+      <marquee class="mar"><h1>EMPLOYEE MANAGEMENT SYSTEM</marquee>
+    </div>
+  </nav>
+  <div class="upper-box">
+    <div class="left-box">
+      <button><i class="fa fa-plus">Add Employee</i></button> 
+    </div>
+    <div class="right-box">
+      <i class="fa fa-search"></i>
+      <input type="text" id="id" placeholder="Enter Employee-ID to Search">
+      <button>Search</button>
+    </div>
+  </div>
+  <div class="table-box">
+    <table>
+      <tr>
+        <th>Employee-ID</th>
+        <th>Employee Name</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Kinley</td>
+        <td>10/11/2023</td>
+        <td>
+          <button><i class="fa fa-eye"></i></button>
+          <button style="background-color: red;"><i class="fa fa-trash"></i></button>
+        </td>
+      </tr> 
+    </table>
+  </div>
+ 
+  <div class="modal">
+    <div class="right-modal"></div>
+  </div>
+  <script>
+    const employees = [];
+  
+    function displayEmployees() {
+      const employeeData = document.getElementById('employeeData');
+      employeeData.innerHTML = ''; 
+  
+      employees.forEach(emp => {
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+          <td>${emp.name}</td>
+          <td>${emp.id}</td>
+          <td>${emp.date}</td>
+        `;
+        employeeData.appendChild(newRow);
+      });
+    }
+  
+    function addEmployee() {
+      const name = prompt('Enter Name:');
+      const date = prompt('Enter Date:');
+  
+      const newEmployee = { name, id: employees.length + 1, date };
+      employees.push(newEmployee);
+  
+      displayEmployees(add ['kinley']);
+    }
+  
+    function removeEmployee() {
+      const removeId = parseInt(prompt('Enter ID of the employee to remove:'));
+      const employeeIndex = employees.findIndex(emp => emp.id === removeId);
+  
+      if (employeeIndex !== -1) {
+        employees.splice(employeeIndex, 1);
+        displayEmployees();
+      } else {
+        alert('Employee ID not found.');
+      }
+    }
+  
+    function updateEmployee() {
+      const updateId = parseInt(prompt('Enter ID of the employee to update:'));
+      const employeeToUpdate = employees.find(emp => emp.id === updateId);
+  
+      if (employeeToUpdate) {
+        const newName = prompt('Enter New Name:');
+        const newDate = prompt('Enter New Date:');
+        employeeToUpdate.name = newName;
+        employeeToUpdate.date = newDate;
+        displayEmployees();
+      } else {
+        alert('Employee ID not found.');
+      }
+    }
+    displayEmployees();
+  </script>
+
+</body>
+</html>

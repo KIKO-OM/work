@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Factorial Calculator</title>
+</head>
+<body>
+  <button onclick="calculateFactorial()">Factorial</button>
+  <script>
+    function calculateFactorial() {
+      const userInput = prompt("Enter a number to calculate its factorial:");
+      const number = parseInt(userInput);
+
+      if (Number.isInteger(number) && number >= 0) {
+        let factorial = 1;
+        for (let i = 2; i <= number; i++) {
+          factorial *= i;
+        }
+        alert(`The factorial of ${number} is ${factorial}`);
+      } else {
+        alert("Invalid input. Please enter a non-negative integer.");
+      }
+    }
+  </script>
+</body>
+</html>

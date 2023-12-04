@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Current Day of the Week</title>
+</head>
+<body>
+  <p id="currentDay"></p>
+  
+  <button onclick="fact()">factorial</button>
+  <button onclick="cal()">calculation</button>
+
+  <script>
+function fact()
+{
+    var n = prompt("Enter a number:");
+    var fact = 1;
+
+    for(let i=2;i<=n;i++)
+    {
+        fact = fact*i;
+    }
+    alert(n+ " factorial is: " +fact);
+}
+function cal() {
+    
+      var operation = prompt(
+        "Choose an operation:\n" +
+        "1. add\n" +
+        "2. sub\n" +
+        "3. divide\n" +
+        "4. multiply"
+      );
+      var num1 = parseFloat(prompt("Num 1:"));
+      var num2 = parseFloat(prompt("Num 2:"));
+
+      var result;
+      var ope;
+
+      switch (operation) {
+        case '1':
+          result = num1 + num2;
+          ope = "add";
+          break;
+        case '2':
+          result = num1 - num2;
+          ope = "sub";
+          break;
+        case '3':
+          if (num2 !== 0) {
+            result = num1 / num2;
+            ope = "divide";
+          } else {
+            result = "Cannot divide by zero";
+          }
+          break;
+        case '4':
+          result = num1 * num2;
+          ope = "multiply";
+          break;
+        default:
+          result = "Invalid operation";
+          break;
+      }
+
+      var resultMessage = ope + ": " + result;
+      alert(resultMessage);
+    }
+           
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+      const currentDays = new Date().getDay();
+
+      let next;
+      switch (currentDays) {
+        case 0:
+          next = 1;
+          break;
+        case 1:
+          next = 2;
+          break;
+        case 2:
+          next = 3;
+          break;
+        case 3:
+          next = 4;
+          break;
+        case 4:
+          next = 5;
+          break;
+        case 5:
+          next = 6;
+          break;
+        case 6:
+          next = 0;
+          break;
+        default:
+          break;
+      }
+
+      const currentDay = days[currentDays];
+    document.getElementById('currentDay').textContent = `Today is ${currentDay}.`;
+      
+
+  </script>
+</body>
+</html>

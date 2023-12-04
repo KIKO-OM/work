@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <p id = "demo"></p>
+    <p id = "join"></p>
+    <p id = "sort"></p>
+    <p id = "rev"></p>
+
+    
+    <script>
+        const fruits = ["Banana","orange","Apple","Mango"];
+
+        // let fruitslen = fruits.length;
+        // for(let i=0; i<fruitslen; i++)
+        // {
+        //     document.write(fruits[i]);
+        // }
+
+        //ToString
+        //document.getElementById("demo").innerHTML = fruits.toString();
+
+        //join
+        //document.getElementById("join").innerHTML = fruits.join("*");
+
+        //concat
+        // const arr1=["Hello","Hi"];
+        // const arr2=[1,2,4];
+        // const arr3=arr1.concat(arr2);
+
+        // document.write("<br><br>"+arr3);
+
+        //The slice
+        //const sli = fruits.slice(1,3);
+        //document.write("<br><br>"+sli);
+
+        //sort 
+        document.getElementById("sort").innerHTML = fruits.sort();
+        document.write("<br>")+fruits.sort();
+
+        //reverse
+        document.getElementById("rev").innerHTML = fruits.reverse();
+        document.write("<br>")+fruits.reverse();
+
+
+        
+    </script>
+</body>
+</html>
